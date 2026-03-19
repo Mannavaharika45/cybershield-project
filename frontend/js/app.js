@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://cybershield-project-arwz.onrender.com';
+const API_BASE_URL = 'https://cybershield-project-7e4c.onrender.com';
 
 // Utility element selectors
 const getEl = id => document.getElementById(id);

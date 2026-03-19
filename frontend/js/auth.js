@@ -4,7 +4,7 @@
  * Requires the API to be running at API_BASE_URL.
  */
 
-const _AUTH_API_URL = 'https://cybershield-project-arwz.onrender.com';
+const _AUTH_API_URL = 'https://cybershield-project-7e4c.onrender.com';
 const TOKEN_KEY = 'cybershield_token';
 const USER_KEY = 'cybershield_user';
 /** Retrieve the stored JWT token from localStorage. */
@@ -130,6 +130,7 @@ async function signup(fullName, email, password) {
 
 /** Login an existing user. */
 async function login(email, password) {
+    console.log("LOGIN CLICKED");
     const res = await fetch(`${_AUTH_API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

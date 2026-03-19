@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="min-h-screen flex items-center justify-center relative overflow-hidden">
 
     <!-- Background glow shapes (identical to other pages) -->
@@ -20,10 +22,12 @@
         <!-- Logo -->
         <div class="text-center mb-8">
             <a href="index.html" class="inline-flex items-center space-x-3">
-                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-[0_0_20px_rgba(37,99,235,0.5)]">
+                <div
+                    class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-[0_0_20px_rgba(37,99,235,0.5)]">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <span class="text-3xl font-bold text-primary tracking-wider">Cyber<span class="text-accent">Shield</span></span>
+                <span class="text-3xl font-bold text-primary tracking-wider">Cyber<span
+                        class="text-accent">Shield</span></span>
             </a>
             <p class="text-secondary mt-3 text-sm">Sign in to access the threat intelligence platform</p>
         </div>
@@ -33,7 +37,8 @@
             <h2 class="text-2xl font-bold text-primary mb-6">Welcome back</h2>
 
             <!-- Error Message -->
-            <div id="errorMsg" class="hidden mb-4 px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/30 text-danger text-sm flex items-center space-x-2">
+            <div id="errorMsg"
+                class="hidden mb-4 px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/30 text-danger text-sm flex items-center space-x-2">
                 <i class="fa-solid fa-circle-exclamation"></i>
                 <span id="errorText"></span>
             </div>
@@ -43,9 +48,9 @@
                 <div>
                     <label class="block text-sm font-medium text-secondary mb-2">Email Address</label>
                     <div class="relative">
-                        <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm"></i>
-                        <input type="email" id="email" required
-                            class="w-full cyber-input rounded-xl py-3 pl-11 pr-4"
+                        <i
+                            class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm"></i>
+                        <input type="email" id="email" required class="w-full cyber-input rounded-xl py-3 pl-11 pr-4"
                             placeholder="you@example.com">
                     </div>
                 </div>
@@ -56,8 +61,7 @@
                     <div class="relative">
                         <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm"></i>
                         <input type="password" id="password" required
-                            class="w-full cyber-input rounded-xl py-3 pl-11 pr-12"
-                            placeholder="••••••••">
+                            class="w-full cyber-input rounded-xl py-3 pl-11 pr-12" placeholder="••••••••">
                         <button type="button" onclick="togglePassword('password', 'eyeIcon')"
                             class="absolute right-4 top-1/2 -translate-y-1/2 text-secondary hover:text-accent transition">
                             <i id="eyeIcon" class="fa-solid fa-eye text-sm"></i>
@@ -88,7 +92,8 @@
 
         <!-- Back to home -->
         <p class="text-center mt-6 text-xs text-secondary">
-            <a href="index.html" class="hover:text-accent transition"><i class="fa-solid fa-arrow-left mr-1"></i>Back to Home</a>
+            <a href="index.html" class="hover:text-accent transition"><i class="fa-solid fa-arrow-left mr-1"></i>Back to
+                Home</a>
         </p>
     </div>
 
@@ -135,4 +140,5 @@
         });
     </script>
 </body>
+
 </html>
