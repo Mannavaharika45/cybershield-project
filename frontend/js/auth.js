@@ -7,7 +7,8 @@
 const _AUTH_API_URL = 'https://cybershield-project-arwz.onrender.com';
 const TOKEN_KEY = 'cybershield_token';
 const USER_KEY = 'cybershield_user';
-
+fetch(`${_AUTH_API_URL}/api/auth/login`)
+fetch(`${_AUTH_API_URL}/api/auth/signup`)
 /** Retrieve the stored JWT token from localStorage. */
 function getToken() {
     return localStorage.getItem(TOKEN_KEY);

@@ -86,7 +86,7 @@ if (analyzeBtn && newsInput) {
 
         try {
             const token = localStorage.getItem('cybershield_token') || '';
-            const res = await fetch(`${API_BASE_URL}/detect-fake-news`, {
+            const res = await fetch(`${API_BASE_URL}/api/detect-fake-news`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ if (analyzeScamBtn && scamInput) {
 
         try {
             const token = localStorage.getItem('cybershield_token') || '';
-            const res = await fetch(`${API_BASE_URL}/detect-scam`, {
+            const res = await fetch(`${API_BASE_URL}/api/detect-scam`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ if (analyzeUrlBtn && urlInput) {
 
         try {
             const token = localStorage.getItem('cybershield_token') || '';
-            const res = await fetch(`${API_BASE_URL}/detect-phishing`, {
+            const res = await fetch(`${API_BASE_URL}/api/detect-phishing`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -298,7 +298,7 @@ if (dropZone && fileInput) {
 
         try {
             const token = localStorage.getItem('cybershield_token') || '';
-            const res = await fetch(`${API_BASE_URL}/analyze-screenshot`, {
+            const res = await fetch(`${API_BASE_URL}/api/analyze-screenshot`, {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${token}` },
                 body: formData

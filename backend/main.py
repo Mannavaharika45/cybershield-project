@@ -5,7 +5,9 @@ from contextlib import asynccontextmanager
 from api.routes import router as api_router
 from api.auth_routes import router as auth_router
 from services.database import connect_to_mongo, close_mongo_connection
-
+import os
+print("🔥 APP STARTING...")
+print("PORT:", os.getenv("PORT"))
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
