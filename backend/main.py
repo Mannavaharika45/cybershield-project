@@ -24,7 +24,8 @@ app = FastAPI(
     lifespan=lifespan)
 
 origins = [
-    "https://cybershield-project.vercel.app",
+    "https://cybershield-project-git-main-mannavaharika45s-projects.vercel.app",
+    "https://cybershield-project.vercel.app"
 ]
 
 # Configure CORS for frontend access
