@@ -120,7 +120,7 @@ async function signup(fullName, email, password) {
     const res = await fetch(`${_AUTH_API_URL}/api/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ full_name: fullName, email, password })
+        body: JSON.stringify({ full_name: fullName, email: email, password: password })
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.detail || 'Signup failed.');
