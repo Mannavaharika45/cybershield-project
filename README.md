@@ -48,6 +48,10 @@ python -m http.server 8082 -d frontend
 ```
 http://localhost:8082
 ```
+## 🌐 Live Demo
+
+🔗 Frontend: https://cybershield-project.vercel.app  
+⚙ Backend: https://cybershield-project-7e4c.onrender.com
 
 ## 📁 Project Structure
 
