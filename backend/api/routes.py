@@ -1,9 +1,9 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException, Depends
 from pydantic import BaseModel
-from backend.services.ml_models import predict_fake_news, predict_scam_message
-from backend.services.phishing import analyze_url
-from backend.services.ocr import extract_text_from_image
-from backend.auth.auth_handler import get_current_user
+from services.ml_models import predict_fake_news, predict_scam_message
+from services.phishing import analyze_url
+from services.ocr import extract_text_from_image
+from auth.auth_handler import get_current_user
 
 router = APIRouter()
 

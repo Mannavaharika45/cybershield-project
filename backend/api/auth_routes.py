@@ -2,11 +2,11 @@
 Authentication API routes: signup, login, and profile (me).
 """
 from fastapi import APIRouter, HTTPException, status, Depends
-from backend.models.user import UserCreate, UserLogin, UserResponse, TokenResponse
-from backend.auth.auth_handler import (
+from models.user import UserCreate, UserLogin, UserResponse, TokenResponse
+from auth.auth_handler import (
     hash_password, verify_password, create_access_token, get_current_user
 )
-from backend.services.database import get_db
+from services.database import get_db
 from bson import ObjectId
 from datetime import datetime, timezone
 
