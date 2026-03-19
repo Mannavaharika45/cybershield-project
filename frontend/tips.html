@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield | Cyber Safety Tips</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="min-h-screen relative flex flex-col">
+
+    <!-- Background accents -->
+    <div class="fixed top-0 left-0 w-full h-96 glow-shape-1 -translate-y-1/2 pointer-events-none z-0"></div>
+    <div class="fixed bottom-0 right-0 w-96 h-96 glow-shape-2 translate-y-1/4 pointer-events-none z-0"></div>
+
+    <!-- Top Navigation Bar -->
+    <header class="glass-panel sticky top-0 z-50 border-b border-l-0 border-r-0 border-t-0">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_15px_rgba(37,99,235,0.5)]">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-primary tracking-wider">Cyber<span class="text-accent">Shield</span></h1>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="nav-link font-medium text-secondary text-base hover:text-primary">Home</a>
+                <a href="fake-news.html" class="nav-link font-medium text-secondary text-base hover:text-primary">Fake News</a>
+                <a href="phishing.html" class="nav-link font-medium text-secondary text-base hover:text-primary">Phishing Log</a>
+                <a href="scam-message.html" class="nav-link font-medium text-secondary text-base hover:text-primary">Scam Analysis</a>
+                <a href="screenshot.html" class="nav-link font-medium text-secondary text-base hover:text-primary">OCR Engine</a>
+                <a href="tips.html" class="nav-link active font-medium text-base">Safety Tips</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-secondary hover:text-accent transition-colors" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </button>
+                
+                <a id="loginNavBtn" href="login.html" class="hidden md:inline-flex btn-primary px-6 py-2.5 rounded-lg font-medium text-sm shadow-lg whitespace-nowrap">
+                    Login
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-secondary hover:text-primary w-10 h-10 flex items-center justify-center">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-10 pb-20 flex-1">
+        <div class="container mx-auto px-6">
+            
+            <header class="mb-10 text-center">
+                <h2 class="text-4xl font-bold text-primary tracking-wide">Cyber Safety Intelligence</h2>
+                <p class="text-lg text-secondary mt-4 max-w-2xl mx-auto">Social engineering tactics evolve daily. Use these industry-standard practices to drastically reduce your attack surface.</p>
+            </header>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tip 1 -->
+                <div class="glass-card rounded-xl p-6 group hover:border-blue-500/50 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-2">Enable 2FA Everywhere</h4>
+                    <p class="text-sm text-secondary">Two-factor authentication blocks 99.9% of automated attacks. Use
+                        an authenticator app rather than SMS whenever possible.</p>
+                </div>
+
+                <!-- Tip 2 -->
+                <div class="glass-card rounded-xl p-6 group hover:border-purple-500/50 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-2">Check the URL</h4>
+                    <p class="text-sm text-secondary">Typosquatting is common. Always verify the domain name (e.g.,
+                        paypaI.com instead of paypal.com). Look for HTTPS, though it doesn't guarantee safety.</p>
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="glass-card rounded-xl p-6 group hover:border-orange-500/50 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center text-orange-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-2">Beware of Urgency</h4>
+                    <p class="text-sm text-secondary">Scammers create artificial time crunches ("Account will be deleted
+                        in 24 hours!"). Pause and verify independently before reacting.</p>
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="glass-card rounded-xl p-6 group hover:border-green-500/50 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-2">Use Password Managers</h4>
+                    <p class="text-sm text-secondary">Never reuse passwords. A password manager generates and stores
+                        complex passwords, and physically cannot enter credentials on a fake site.</p>
+                </div>
+
+                <!-- Tip 5 -->
+                <div class="glass-card rounded-xl p-6 group hover:border-red-500/50 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-secret"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-2">Zero Trust Email</h4>
+                    <p class="text-sm text-secondary">Do not trust the "From" address. Emails can be easily spoofed. Do
+                        not download unexpected attachments, especially Office docs or ZIPs.</p>
+                </div>
+
+                <!-- Tip 6 -->
+                <div class="glass-card rounded-xl p-6 group hover:border-teal-500/50 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-2">Smishing Awareness</h4>
+                    <p class="text-sm text-secondary">SMS phishing is rising. Banks and government agencies will never
+                        ask for your PIN, password, or direct money transfers via text message.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Public page: show avatar if logged in, otherwise show Login button
+        renderPublicNavbar();
+
+        // Simple Theme toggling logic
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or default to dark
+        const savedTheme = localStorage.getItem('cybershield-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('cybershield-theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'light') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+    </script>
+</body>
+
+</html>

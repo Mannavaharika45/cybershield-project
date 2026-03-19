@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex items-center justify-center relative overflow-hidden">
+
+    <!-- Background glow shapes (identical to other pages) -->
+    <div class="fixed top-0 left-0 w-full h-96 glow-shape-1 -translate-y-1/2 pointer-events-none z-0"></div>
+    <div class="fixed bottom-0 right-0 w-96 h-96 glow-shape-2 translate-y-1/4 pointer-events-none z-0"></div>
+
+    <!-- Login Card -->
+    <div class="relative z-10 w-full max-w-md px-6">
+
+        <!-- Logo -->
+        <div class="text-center mb-8">
+            <a href="index.html" class="inline-flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-[0_0_20px_rgba(37,99,235,0.5)]">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <span class="text-3xl font-bold text-primary tracking-wider">Cyber<span class="text-accent">Shield</span></span>
+            </a>
+            <p class="text-secondary mt-3 text-sm">Sign in to access the threat intelligence platform</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="glass-panel rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-primary mb-6">Welcome back</h2>
+
+            <!-- Error Message -->
+            <div id="errorMsg" class="hidden mb-4 px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/30 text-danger text-sm flex items-center space-x-2">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="errorText"></span>
+            </div>
+
+            <form id="loginForm" class="space-y-5">
+                <!-- Email -->
+                <div>
+                    <label class="block text-sm font-medium text-secondary mb-2">Email Address</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm"></i>
+                        <input type="email" id="email" required
+                            class="w-full cyber-input rounded-xl py-3 pl-11 pr-4"
+                            placeholder="you@example.com">
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label class="block text-sm font-medium text-secondary mb-2">Password</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm"></i>
+                        <input type="password" id="password" required
+                            class="w-full cyber-input rounded-xl py-3 pl-11 pr-12"
+                            placeholder="••••••••">
+                        <button type="button" onclick="togglePassword('password', 'eyeIcon')"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-secondary hover:text-accent transition">
+                            <i id="eyeIcon" class="fa-solid fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" id="submitBtn"
+                    class="w-full btn-primary py-3 rounded-xl font-bold text-base flex items-center justify-center space-x-2 mt-2">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Sign In</span>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="flex items-center my-6">
+                <div class="flex-1 h-px bg-accent/10"></div>
+                <span class="px-4 text-secondary text-xs">OR</span>
+                <div class="flex-1 h-px bg-accent/10"></div>
+            </div>
+
+            <p class="text-center text-sm text-secondary">
+                Don't have an account?
+                <a href="signup.html" class="text-accent font-medium hover:underline ml-1">Create one free</a>
+            </p>
+        </div>
+
+        <!-- Back to home -->
+        <p class="text-center mt-6 text-xs text-secondary">
+            <a href="index.html" class="hover:text-accent transition"><i class="fa-solid fa-arrow-left mr-1"></i>Back to Home</a>
+        </p>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        // If already logged in, redirect to dashboard
+        if (isLoggedIn()) window.location.href = 'index.html';
+
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fa-solid fa-eye-slash text-sm';
+            } else {
+                input.type = 'password';
+                icon.className = 'fa-solid fa-eye text-sm';
+            }
+        }
+
+        function showError(msg) {
+            const box = document.getElementById('errorMsg');
+            document.getElementById('errorText').textContent = msg;
+            box.classList.remove('hidden');
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Signing in...';
+
+            try {
+                await login(email, password);
+                window.location.href = 'index.html';
+            } catch (err) {
+                showError(err.message);
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> <span>Sign In</span>';
+            }
+        });
+    </script>
+</body>
+</html>

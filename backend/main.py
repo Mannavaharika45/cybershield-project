@@ -1,0 +1,40 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+
+from backend.api.routes import router as api_router
+from backend.api.auth_routes import router as auth_router
+from backend.services.database import connect_to_mongo, close_mongo_connection
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup and shutdown lifecycle events."""
+    await connect_to_mongo()
+    yield
+    await close_mongo_connection()
+
+
+app = FastAPI(
+    title="AI Cyber Security API",
+    description="API for detecting fake news, scam messages, and phishing URLs. Includes user auth.",
+    version="2.0.0",
+    lifespan=lifespan)
+
+# Configure CORS for frontend access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust to specific origins in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Register routers
+app.include_router(auth_router, prefix="/api/auth", tags=["Authentication"])
+app.include_router(api_router, prefix="/api", tags=["Detection"])
+
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to CyberShield API v2.0", "status": "online"}
