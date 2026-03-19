@@ -23,10 +23,14 @@ app = FastAPI(
     version="2.0.0",
     lifespan=lifespan)
 
+origins = [
+    "https://cybershield-project.vercel.app",
+]
+
 # Configure CORS for frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust to specific origins in production
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
